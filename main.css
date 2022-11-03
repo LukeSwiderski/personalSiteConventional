@@ -62,6 +62,14 @@ body {
     font-weight: 300;
     text-align: left;
   }
+  #contributions {
+    color: dimgray;
+    margin-top: 18px;
+    font-style: italic;
+    font-size: 14px;
+    align-content: center;
+
+  }
   
   .bug-link {
     text-decoration: none;
