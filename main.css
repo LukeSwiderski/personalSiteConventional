@@ -1,0 +1,92 @@
+body {
+  background-color: #fafafa;
+  font-family: Arial regular, sans-serif;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1em;
+    grid-template-rows: auto;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 1%;
+    padding-left: 12%;
+    padding-right: 12%;
+  }
+
+  .grid-item {
+    /* border: 1px solid black; */
+    font-size: 16px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .deets {
+    position: relative;
+    bottom: 7%;
+    text-align: left;
+  }
+
+  .issue {
+    position: relative;
+    text-align: left;
+  }
+
+  .image {
+    max-width: 175px;
+    max-height: auto;
+    box-shadow: 2px 6px 8px #888888;
+  }
+
+  .screen-cap {
+    max-width: 350px;
+    /* position: absolute; */
+    top: 15%;
+    box-shadow: 2px 6px 8px #888888;
+  }
+
+  .accent {
+    color: rgb(123, 162, 202);
+  }
+
+  h1 {
+    font-weight: lighter;
+  }
+
+  h2 {
+    position: relative;
+    /* bottom: 95%; */
+    color: dimgray;
+    font-weight: 300;
+    text-align: left;
+  }
+  
+  .bug-link {
+    text-decoration: none;
+  }
+
+  .bug-link:visited {
+    color: black;
+  }
+
+  a {
+    float: left;
+    text-align: left;
+  }
+
+  footer {
+    text-align: center;
+    color: dimgray;
+  }
+
+  @media (max-width: 767px) {
+    .hidden-mobile {
+      display: none;
+    }
+    .mobile{
+      padding: 0;
+      margin: 0;
+    }
+  }
