@@ -13,8 +13,8 @@
     <ul>
       <li><a href="#top">Home</a></li>
       <li><a href="#open-source">Open Source</a></li>
-      <li><a href="#journey-headline">My Journey</a></li>
-      <li><a href="#projects">Personal Projects</a></li>
+      <li><a href="#journey">My Journey</a></li>
+      <li><a href="#personal-project-top">Personal Projects</a></li>
       <li><a href="#about">About Me</a></li>
     </ul>
   </nav>
@@ -159,7 +159,8 @@
     </div>
     <br>
   </div>
-  <article id="journey">
+  <div id="journey"></div>
+  <article>
     <h2 id="journey-headline">
       My Open Source Journey
     </h2>
@@ -176,7 +177,8 @@
       <p>
         By closely following the docs, eventually I got the development environment up and running. Known bugs in the
         debugger software are posted
-        publicly by Firefox. Just looking through the bug list and understanding what would be an appropriate choice for
+        publicly by Firefox. Just looking through the massive bug list and understanding what would be an appropriate
+        choice for
         a
         beginner is a daunting task in itself. I decided to look for CSS bugs, because they might be simple, and might
         not
@@ -209,9 +211,10 @@
         uses
         extensively. To diagnose bugs in the debugger, you basically run the debugger on the debugger. The debugger is
         written in javascript and uses React for components and Redux to control the flow of data. I spent some time
-        learning about React and Redux and was able to gleam a lot about this particular bug, but a fix worthy of
+        learning about React and Redux and was able to learn a lot about the Firefox debugger code in the process, but a
+        fix worthy of
         submitting continued to elude me. I asked questions in the bug thread, but I didn’t possess the knowledge yet to
-        properly understand the answers.
+        properly understand all of the answers.
       </p>
       <p>
         I decided to go back to my bug list and found a bug that a lot of other “students” like myself had attempted to
@@ -262,18 +265,19 @@
         should remain closed, if the user has collapsed it. By reading the code and stepping through it with the
         debugger,
         I was able to understand why this was happening. I came up with two solutions that would fix the problem. Having
-        read so many bugs, I realized there was a related bug. The breakpoints pane also expands unexpectedly when you
-        click any of the “step” buttons. One solution more made sense to me than the other and would fix both bugs, so I
+        read so many other bugs, I realized there was a related bug. The breakpoints pane also expands unexpectedly when
+        you
+        click any of the “step” buttons. One solution made more sense to me than the other and would fix both bugs, so I
         decided to implement it. I realized that there were aspects of both React and Redux that I thought I understood,
         but really didn’t. I had to spend some time making simple React Redux apps to better understand the flow of
         information. Once I did this, I was able to implement the solution. Then it was time to write tests. Empowered
         by
         my last bug, I drove right in. I still had days where I spent hours trying to figure out a small problem, but
         once
-        again I was able to figure out the solution.
+        again I was able to write passing assertions.
       </p>
       <p>
-        Though this account is brief, I worked on this bug for quite a while. Sometimes the maintainers are too busy to
+        Though this account is brief, I worked on this bug for several weeks. Sometimes the maintainers are too busy to
         review your patch right away when you post it. I had a good deal of back and forth on this one. I wrote a lot of
         tests. I learned a lot about Redux and how data moves through the ecosystem. Eventually the maintainers approved
         my work and my patch landed. This bug empowered me to go back to the bug I failed to fix earlier on. Having some
@@ -284,26 +288,44 @@
         Open source has taught me that I can solve problems in a complex code base. I can work within a team that has a
         defined system and succeed. I can communicate effectively and apply feedback. I learned that everything might be
         hard at first, but through focus and persistence,
-        I can figure it out!
+        I can figure things out!
       </p>
     </span>
-    <button onclick="readMoreLess()" id="myBtn">Read more</button>
+    <button onclick="readMoreLess()" id="myBtn">Read More</button>
   </article>
-  <div class="grid-container" id="personal-project">
-    <h2>Personal Project</h2>
-    <div></div>
-    <div>
-      <h4>Guitar Lesson Helper</h4>
-      <p>This app is a visual reference for practicing blues guitar solos. I made it because I needed it, and something
-        like it did not exist. I learned a lot about CSS Grid and a lot more about CSS in general. To view the app,
-        click
-        here or on the image. To view the code, click here.
-      </p>
+  <div id="personal-project-top"></div>
+  <div class="project-grid-container mobile">
+    <div id="personal-project">
+      <h2>Personal Project</h2>
     </div>
-    <a href="bluesMatrix/bluesMatrix.html">
-      <img class="matrix hidden-mobile" src="blues-matrix.png">
-    </a>
-
+    <div></div>
+    <div id="guitar">
+      <h4>Guitar Practice Visual Reference</h4>
+    </div>
+    <div id="matrix-image">
+      <a href="https://lukeswiderski.com/bluesMatrix.html">
+        <img class="matrix hidden-mobile" src="blues-matrix.png">
+      </a>
+    </div>
+    <div id="project-info">
+      <span>
+        This app is a visual reference for practicing blues guitar solos. I made it because I needed it,
+        and something
+        like it did not exist. The guitar instructor would have you print off templates and fill them in with a marker.
+        I made this instead. I learned a lot about CSS Grid and a lot more about CSS in general. To view the app,
+      </span>
+      <a href="https://lukeswiderski.com/bluesMatrix.html">
+        click here.
+      </a>
+      <span>
+        To view the code,
+      </span><a href="https://github.com/LukeSwiderski/bluesMatrix">
+        click here.
+      </a>
+      <span>
+        The app is written in vanilla javascript.
+      </span>
+    </div>
   </div>
 
   <footer><span>Luke Swiderski 2023</span></footer>
