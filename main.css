@@ -155,6 +155,7 @@ li a:hover {
   }
 
   .project-grid-container {
+    font-family: Georgia, 'Times New Roman', Times, serif;
     display: grid;
     grid-template-columns: repeat(16, 1fr);
     /* grid-gap: 1em; */
@@ -165,7 +166,7 @@ li a:hover {
   }
 
   #personal-project-top {
-    min-height: 50px;
+    min-height: 125px;
   }
 
   #personal-project {
@@ -201,7 +202,67 @@ li a:hover {
     float: none;
   }
 
+  .about-cap {
+    max-width: 450px;
+    box-shadow: 2px 6px 8px #888888;
+  }
+
+  .grid-container-about {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-gap: 1em;
+    grid-template-rows: repeat(7, 1fr);
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 1%;
+  }
+
+  #about {
+    min-height: 50px;
+  }
+
+  #about-me {
+    margin: 0px;
+    padding: 0px;
+    grid-column-start: 2;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+
+  #about-info {
+    margin: 0px;
+    padding: 0px;
+    grid-column-start: 2;
+    grid-column-end: -1;
+    grid-row-start: 2;
+    grid-row-end: -1;
+  }
+
+  #corn {
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: 3;
+    grid-row-end: -1;
+  }
+
+  #snook {
+    grid-column-start: 7;
+    grid-column-end: 12;
+    grid-row-start: 3;
+    grid-row-end: -1;
+  }
+
+  #guitar-pic {
+    max-height: 256px;
+    grid-column-start: 13;
+    grid-column-end: -1;
+    grid-row-start: 3;
+    grid-row-end: -1;
+  }
+
   footer {
+    margin-top: 200px;
     text-align: center;
     color: dimgray;
   }
