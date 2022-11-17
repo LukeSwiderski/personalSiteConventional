@@ -9,15 +9,42 @@
 </head>
 
 <body>
-  <nav>
-    <ul>
-      <li><a href="#top">Home</a></li>
-      <li><a href="#open-source">Open Source</a></li>
-      <li><a href="#journey">My Journey</a></li>
-      <li><a href="#personal-project-top">Personal Project</a></li>
-      <li><a href="#about">About Me</a></li>
-    </ul>
-  </nav>
+  <div class="header">
+    <nav class="navbar">
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a class="nav-link" href="#top">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#open-source">Open Source</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#journey">My Journey</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#personal-project-top">Personal Project</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About Me</a>
+        </li>
+      </ul>
+      <button type="button" class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </nav>
+  </div>
+
+  <!-- <nav>
+      <ul>
+        <li><a href="#top">Home</a></li>
+        <li><a href="#open-source">Open Source</a></li>
+        <li><a href="#journey">My Journey</a></li>
+        <li><a href="#personal-project-top">Personal Project</a></li>
+        <li><a href="#about">About Me</a></li>
+      </ul>
+    </nav> -->
   <div id="top"></div>
   <div class="grid-container mobile" id="luke">
     <div class="grid-item">
@@ -90,7 +117,8 @@
       </a>
       <br>
       <br>
-      <p class="issue">This patch fixes the issue of the breakpoints pane opening unexpectedly when selecing a callstack
+      <p class="issue">This patch fixes the issue of the breakpoints pane opening unexpectedly when selecing a
+        callstack
         frame or toggling the event-listener-breakpoints log checkbox.
       </p>
       <a class="issue" href="https://phabricator.services.mozilla.com/D149994">Merged Code</a>
@@ -105,7 +133,8 @@
         </strong>
       </a>
       <br>
-      <p class="issue">This patch fixes the issue of the breakpoints pane opening unexpectedly when stepping or resuming
+      <p class="issue">This patch fixes the issue of the breakpoints pane opening unexpectedly when stepping or
+        resuming
         the debugger.
       </p>
       <a class="issue" href="https://phabricator.services.mozilla.com/D149994">Merged Code</a>
@@ -192,7 +221,8 @@
         changes
         in a freshly built version. After much tinkering and making what looked like the correct changes to fix the
         problem, I was ready to
-        submit my patch. I was quite afraid submitting my first patch. What if it is wrong, or what if it doesn’t submit
+        submit my patch. I was quite afraid submitting my first patch. What if it is wrong, or what if it doesn’t
+        submit
         properly? Is my commit message written correctly? I didn’t want to needlessly inconvenience the maintainers or
         look
         foolish. Fortunately,
@@ -202,22 +232,27 @@
         the code base.
       </p>
       <p>
-        Next I wanted to tackle a bug that involved javascript. Once again, I looked at the available bugs posted, made
+        Next I wanted to tackle a bug that involved javascript. Once again, I looked at the available bugs posted,
+        made
         a
-        list of possible candidates, and then ranked each bug by what would be the most simple. Unfortunately I errored
+        list of possible candidates, and then ranked each bug by what would be the most simple. Unfortunately I
+        errored
         in
         this estimation and spent about a month investigating a bug that was not skill appropriate for me. I was very
         comfortable with vanilla javascript at this time but not as familiar with React or Redux, which the debugger
         uses
         extensively. To diagnose bugs in the debugger, you basically run the debugger on the debugger. The debugger is
         written in javascript and uses React for components and Redux to control the flow of data. I spent some time
-        learning about React and Redux and was able to learn a lot about the Firefox debugger code in the process, but a
+        learning about React and Redux and was able to learn a lot about the Firefox debugger code in the process, but
+        a
         fix worthy of
-        submitting continued to elude me. I asked questions in the bug thread, but I didn’t possess the knowledge yet to
+        submitting continued to elude me. I asked questions in the bug thread, but I didn’t possess the knowledge yet
+        to
         properly understand all of the answers.
       </p>
       <p>
-        I decided to go back to my bug list and found a bug that a lot of other “students” like myself had attempted to
+        I decided to go back to my bug list and found a bug that a lot of other “students” like myself had attempted
+        to
         solve but gave up when confronted with writing tests. The code change to fix the bug was simple and already
         posted, but to submit the patch, automated “mochitests” were required, which are basically asynchronous
         functions
@@ -225,18 +260,21 @@
         mouse movements and all the GUI actions a user might otherwise perform.
       </p>
       <p>
-        I thought, “If I can figure out how to write these tests, I can submit this patch, and be prepared to write more
+        I thought, “If I can figure out how to write these tests, I can submit this patch, and be prepared to write
+        more
         tests in the future for bugs whose code changes I figure out myself.”
         Each debugger component has its own set of tests. I was able to locate them in the code base and read the
         existing tests for that component. Unfortunately, they were completely opaque to me. The syntax was familiar,
         but
         what was happening in each test was not apparent. I can see why so many others had given up at this point. I
-        looked up the documentation for the mochitests. They describe what the tests do and are for, but the minutiae is
+        looked up the documentation for the mochitests. They describe what the tests do and are for, but the minutiae
+        is
         not explained. I decided to look at every test in the debugger and make note of which were the shortest. From
         there I was able to make small code changes and see what they did. I broke a lot of tests. I added lots of
         debugger statements and paused tests that were in the process of running, so I could stop and look around the
         GUI
-        and see what they were doing. I spent several weeks doing this. After many instances, I began noticing patterns.
+        and see what they were doing. I spent several weeks doing this. After many instances, I began noticing
+        patterns.
         I
         began to see familiar snippets that had been used in other tests. I began to realize that there were shared
         functions that are used across many tests, and functions local to individual tests. I noticed the general way
@@ -245,14 +283,17 @@
         manipulated inside the tests.
       </p>
       <p>
-        I started writing my own tests for my patch. I often would have to look up a similar test and borrow code for my
+        I started writing my own tests for my patch. I often would have to look up a similar test and borrow code for
+        my
         own. At this point, I still didn’t always understand the correct context of everything, but I was able to run
         the
         tests, pause them with debugger statements, and see if the browser was doing what I wanted. Often it was not,
         and
         I would spend a whole day trying to figure out how to make it do one small task. The other difficult issue was
-        having an assertion fail and then having to figure out why. Gradually my first mochitest appeared to be working
-        and all my assertions were passing. Before submitting, I brainstormed all the edge cases I could think of. When
+        having an assertion fail and then having to figure out why. Gradually my first mochitest appeared to be
+        working
+        and all my assertions were passing. Before submitting, I brainstormed all the edge cases I could think of.
+        When
         I
         couldn’t come up with anymore, I submitted my patch. The reviewer said it looked good and asked for one
         additional
@@ -264,11 +305,15 @@
         It
         should remain closed, if the user has collapsed it. By reading the code and stepping through it with the
         debugger,
-        I was able to understand why this was happening. I came up with two solutions that would fix the problem. Having
-        read so many other bugs, I realized there was a related bug. The breakpoints pane also expands unexpectedly when
+        I was able to understand why this was happening. I came up with two solutions that would fix the problem.
+        Having
+        read so many other bugs, I realized there was a related bug. The breakpoints pane also expands unexpectedly
+        when
         you
-        click any of the “step” buttons. One solution made more sense to me than the other and would fix both bugs, so I
-        decided to implement it. I realized that there were aspects of both React and Redux that I thought I understood,
+        click any of the “step” buttons. One solution made more sense to me than the other and would fix both bugs, so
+        I
+        decided to implement it. I realized that there were aspects of both React and Redux that I thought I
+        understood,
         but really didn’t. I had to spend some time making simple React Redux apps to better understand the flow of
         information. Once I did this, I was able to implement the solution. Then it was time to write tests. Empowered
         by
@@ -277,16 +322,23 @@
         again I was able to write passing assertions.
       </p>
       <p>
-        Though this account is brief, I worked on this bug for several weeks. Sometimes the maintainers are too busy to
-        review your patch right away when you post it. I had a good deal of back and forth on this one. I wrote a lot of
-        tests. I learned a lot about Redux and how data moves through the ecosystem. Eventually the maintainers approved
-        my work and my patch landed. This bug empowered me to go back to the bug I failed to fix earlier on. Having some
-        experience now, I wasn’t as nervous to try different ideas. I ended up landing that patch and several others. I
+        Though this account is brief, I worked on this bug for several weeks. Sometimes the maintainers are too busy
+        to
+        review your patch right away when you post it. I had a good deal of back and forth on this one. I wrote a lot
+        of
+        tests. I learned a lot about Redux and how data moves through the ecosystem. Eventually the maintainers
+        approved
+        my work and my patch landed. This bug empowered me to go back to the bug I failed to fix earlier on. Having
+        some
+        experience now, I wasn’t as nervous to try different ideas. I ended up landing that patch and several others.
+        I
         feel confident now to take on more difficult bugs.
       </p>
       <p>
-        Open source has taught me that I can solve problems in a complex code base. I can work within a team that has a
-        defined system and succeed. I can communicate effectively and apply feedback. I learned that everything might be
+        Open source has taught me that I can solve problems in a complex code base. I can work within a team that has
+        a
+        defined system and succeed. I can communicate effectively and apply feedback. I learned that everything might
+        be
         hard at first, but through focus and persistence,
         I can figure things out!
       </p>
@@ -311,7 +363,8 @@
       <span>
         This app is a visual reference for practicing blues guitar solos. I made it because I needed it,
         and something
-        like it did not exist. The guitar instructor would have you print off templates and fill them in with a marker.
+        like it did not exist. The guitar instructor would have you print off templates and fill them in with a
+        marker.
         I made this instead. The app is written in vanilla javascript. I learned a lot about CSS Grid and a lot more
         about CSS in general. To view the app,
       </span>
@@ -338,22 +391,6 @@
 
   <footer><span>Luke Swiderski 2023</span></footer>
 </body>
-<script>
-  function readMoreLess() {
-    var dots = document.getElementById("dots");
-    var moreText = document.getElementById("more");
-    var btnText = document.getElementById("myBtn");
-
-    if (dots.style.display === "none") {
-      dots.style.display = "inline";
-      btnText.innerHTML = "Read more";
-      moreText.style.display = "none";
-    } else {
-      dots.style.display = "none";
-      btnText.innerHTML = "Read less";
-      moreText.style.display = "inline";
-    }
-  }
-</script>
+<script src="./app.js"></script>
 
 </html>
