@@ -4,12 +4,14 @@ body {
 }
 
 .header{
-  background-color: #3f3f3f;
+  background-color: #303030;
   z-index: 500;
   width: 100%;
   min-height: 50px;
   position: fixed;
   top: 0;
+  left: 0;
+
 }
 
 .navbar {
@@ -47,18 +49,6 @@ body {
   /* font-weight: 400; */
   color: #dddddf;
 }
-
-/* .nav-link:hover{
-  color: #482ff7;
-} */
-
-/* nav {
-  position: fixed;
-  top:0;
-  left:0;
-  width: 100%; 
-  z-index: 500; 
-} */
 
 a {
   float: left;
@@ -169,6 +159,7 @@ h2 {
 
 .bug-link {
   text-decoration: none;
+  color: black;
 }
 
 .bug-link:visited {
@@ -243,7 +234,7 @@ article {
 }
 
 #project-info {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.4;
   grid-column-start: 2;
   grid-column-end: 7;
@@ -285,6 +276,7 @@ article {
 }
 
 #about-info {
+  font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 18px;
   margin: 0px;
   padding: 0px;
@@ -376,6 +368,66 @@ footer {
 
   .hamburger.active .bar:nth-child(3) {
       transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .grid-container {
+    display: block;
+  }
+
+  .grid-item {
+    margin-top: 15px;
+  }
+
+  .issue {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  .bug-link {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  #open-source {
+    min-height: 25px;
+  }
+
+  #journey {
+    min-height: 25px;
+  }
+
+  article {
+    margin-top: 0;
+    margin-bottom: 25px;
+  }
+
+  .project-grid-container {
+    display: block;
+  }
+
+  #project-info {
+    font-size: 20px;
+  }
+
+  #personal-project-top {
+    min-height: 25px;
+  }
+
+  .grid-container-about {
+    display: block;
+  }
+
+  #about {
+    min-height: 50px;
+  }
+
+  #about-info {
+    margin-top: 15px;
+    font-size: 20px;
+  }
+
+  footer {
+    margin-top: 75px;
   }
 }
 
