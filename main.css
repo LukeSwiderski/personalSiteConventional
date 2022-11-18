@@ -393,10 +393,6 @@ footer {
     margin-bottom: 5px;
   }
 
-  #open-source {
-    min-height: 25px;
-  }
-
   #journey {
     min-height: 25px;
   }
@@ -412,10 +408,11 @@ footer {
 
   #project-info {
     font-size: 20px;
+    line-height: 1.8;
   }
 
   #personal-project-top {
-    min-height: 25px;
+    min-height: 50px;
   }
 
   .grid-container-about {
