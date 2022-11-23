@@ -91,13 +91,14 @@ li a:hover {
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 1em;
+    grid-row-gap: 1em;
+    grid-column-gap: 2em;
     grid-template-rows: auto;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 7%;
+    margin-right: 7%;
     margin-top: 1%;
-    padding-left: 12%;
-    padding-right: 12%;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 .grid-item {
@@ -105,6 +106,7 @@ li a:hover {
   text-align: center;
   justify-content: center;
   align-items: center;
+  padding: 5%;
 }
 
 .deets {
@@ -177,7 +179,7 @@ h2 {
 
 article {
   font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 1.8;
   max-width: 1000px;
   margin: 100px auto;
@@ -315,7 +317,7 @@ footer {
   color: dimgray;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 820px) {
   .hidden-mobile {
     display: none;
   }
@@ -372,11 +374,15 @@ footer {
   }
 
   .grid-container {
-    display: block;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 2px;
+
   }
 
   .grid-item {
     margin-top: 15px;
+    padding: 1%;
   }
 
   .issue {
@@ -400,6 +406,7 @@ footer {
   article {
     margin-top: 0;
     margin-bottom: 25px;
+    font-size: 16px;
   }
 
   .project-grid-container {
@@ -407,7 +414,7 @@ footer {
   }
 
   #project-info {
-    font-size: 20px;
+    font-size: 16px;
     line-height: 1.8;
   }
 
@@ -425,7 +432,7 @@ footer {
 
   #about-info {
     margin-top: 15px;
-    font-size: 20px;
+    font-size: 16px;
   }
 
   footer {
@@ -433,3 +440,33 @@ footer {
   }
 }
 
+@media only screen and (max-width: 1200px) {
+  .grid-container{
+    margin: auto auto;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  article {
+    margin: auto auto;
+  }
+
+  .project-grid-container {
+    margin: auto auto;
+  }
+
+  .matrix {
+    display: none;
+  }
+
+  #project-info {
+    grid-column-start: 2;
+    grid-column-end: -1;
+    grid-row-start: 3;
+    grid-row-end: -1;
+  }
+
+  .grid-container-about {
+    margin: auto auto;
+  }
+}
