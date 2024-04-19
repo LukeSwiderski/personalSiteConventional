@@ -32,3 +32,8 @@ function closeMenu() {
   hamburger.classList.remove("active");
   navMenu.classList.remove("active");
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+  var currentYear = new Date().getFullYear();
+  document.getElementById("currentYear").textContent = currentYear;
+});
